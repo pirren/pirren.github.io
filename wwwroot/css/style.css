@@ -124,41 +124,50 @@
 
 @-webkit-keyframes fa-spin {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotate(1turn);
     transform: rotate(1turn);
   }
 }
 @keyframes fa-spin {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotate(1turn);
     transform: rotate(1turn);
   }
 }
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 
 .fa-flip-vertical {
+  -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
 }
 
@@ -167,10 +176,12 @@
 }
 
 .fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -webkit-transform: scale(-1);
   transform: scale(-1);
 }
 
 :root .fa-flip-both, :root .fa-flip-horizontal, :root .fa-flip-vertical, :root .fa-rotate-90, :root .fa-rotate-180, :root .fa-rotate-270 {
+  -webkit-filter: none;
   filter: none;
 }
 
@@ -6082,7 +6093,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .underlined {
@@ -6200,7 +6211,7 @@ nav #scrollProgress.small {
 nav .left .logo {
   width: 50px;
   height: 47.5px;
-  background-image: url(../../gfx/pn_logo_dark.svg);
+  background-image: url(../wwwroot/gfx/pn_logo_dark.svg);
   background-size: cover;
   z-index: 2;
   margin-right: 1rem;
@@ -6209,10 +6220,12 @@ nav .left .logo {
 
 /* header */
 .header {
-  padding: 14rem 0;
-  background: url(../../gfx/hero/james-harrison-vpOeXr5wmR4-unsplash.jpg);
+  height: 600px;
+  max-height: 90vh;
+  background: url(../wwwroot/gfx/hero/james-harrison-vpOeXr5wmR4-unsplash.jpg);
   background-size: cover;
   background-position: center;
+  display: flex;
   position: relative;
 }
 .header::before {
@@ -6377,7 +6390,7 @@ nav .left .logo {
   }
 }
 .what-i-do .module:nth-of-type(1) .icon {
-  background-image: url(../../gfx/icons/icons8-prototype-100.png);
+  background-image: url(../wwwroot/gfx/icons/icons8-prototype-100.png);
 }
 .what-i-do .module:nth-of-type(2) {
   border-top: 0;
@@ -6390,7 +6403,7 @@ nav .left .logo {
   }
 }
 .what-i-do .module:nth-of-type(2) .icon {
-  background-image: url(../../gfx/icons/icons8-source-code-100.png);
+  background-image: url(../wwwroot/gfx/icons/icons8-source-code-100.png);
 }
 .what-i-do .module:nth-of-type(3) {
   border-bottom-left-radius: 0.5rem;
@@ -6404,7 +6417,7 @@ nav .left .logo {
   }
 }
 .what-i-do .module:nth-of-type(3) .icon {
-  background-image: url(../../gfx/icons/icons8-cv-100.png);
+  background-image: url(../wwwroot/gfx/icons/icons8-cv-100.png);
 }
 
 .what-i-do .module .icon {
@@ -6515,10 +6528,7 @@ footer {
 .project--pn .project--header img {
   width: 50px;
   height: 47.5px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   margin-right: 0.75rem;
 }
 .project:hover .project--inner {
@@ -6537,8 +6547,7 @@ footer {
   background: white;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6841,4 +6850,6 @@ footer {
 .centered {
   margin-right: auto;
   margin-left: auto;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,38 @@
+name: CD
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source Git branch
+        uses: actions/checkout@v2
+      
+      - name: Use Node.js 2.1.5
+        uses: actions/setup-node@v2.1.5
+
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Run sass script
+        run: npm run sass
+
+      - name: Add and commit new css to master
+        run: |
+          git config --local user.email 'action@github.com'
+          git config --local user.name 'GitHub Action'
+          git add wwwroot/css/*
+          git commit -m 'Updates compiled CSS files'
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PUBLISH_TOKEN }}
+          branch: master
+          
