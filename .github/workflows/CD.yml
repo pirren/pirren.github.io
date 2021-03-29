@@ -17,6 +17,11 @@ jobs:
       - name: Use Node.js 2.1.5
         uses: actions/setup-node@v2.1.5
 
+      - name: Remove css stylesheet
+        uses: JesseTG/rm@v1.0.2
+        with:
+          path: wwwroot/css/style.css
+
       - name: Install dependencies
         run: npm install
         
