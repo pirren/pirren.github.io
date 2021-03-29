@@ -6211,7 +6211,7 @@ nav #scrollProgress.small {
 nav .left .logo {
   width: 50px;
   height: 47.5px;
-  background-image: url(../wwwroot/gfx/pn_logo_dark.svg);
+  background-image: url(../gfx/pn_logo_dark.svg);
   background-size: cover;
   z-index: 2;
   margin-right: 1rem;
@@ -6222,7 +6222,7 @@ nav .left .logo {
 .header {
   height: 600px;
   max-height: 90vh;
-  background: url(../wwwroot/gfx/hero/james-harrison-vpOeXr5wmR4-unsplash.jpg);
+  background: url(../gfx/hero/james-harrison-vpOeXr5wmR4-unsplash.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -6390,7 +6390,7 @@ nav .left .logo {
   }
 }
 .what-i-do .module:nth-of-type(1) .icon {
-  background-image: url(../wwwroot/gfx/icons/icons8-prototype-100.png);
+  background-image: url(../gfx/icons/icons8-prototype-100.png);
 }
 .what-i-do .module:nth-of-type(2) {
   border-top: 0;
@@ -6403,7 +6403,7 @@ nav .left .logo {
   }
 }
 .what-i-do .module:nth-of-type(2) .icon {
-  background-image: url(../wwwroot/gfx/icons/icons8-source-code-100.png);
+  background-image: url(../gfx/icons/icons8-source-code-100.png);
 }
 .what-i-do .module:nth-of-type(3) {
   border-bottom-left-radius: 0.5rem;
@@ -6417,7 +6417,7 @@ nav .left .logo {
   }
 }
 .what-i-do .module:nth-of-type(3) .icon {
-  background-image: url(../wwwroot/gfx/icons/icons8-cv-100.png);
+  background-image: url(../gfx/icons/icons8-cv-100.png);
 }
 
 .what-i-do .module .icon {
