@@ -62,12 +62,4 @@ $cardborder: #dfdfdf;
   &--body {
     transform: rotateY(180deg);
   }
-
-  // @include mx.mq(medium) {
-  //   flex: 1 1 40%;
-  // }
-
-  // @include mx.mq(large) {
-  //   flex: 1 1 25%;
-  // }
 }
