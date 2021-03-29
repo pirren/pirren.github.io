@@ -1,0 +1,12 @@
+/* Card component */
+
+.card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #fff;
+    box-shadow: 0 0.5rem 1.25rem rgba(black, 0.2);
+
+    &--content {
+        padding: 0.5rem;
+    }
+}

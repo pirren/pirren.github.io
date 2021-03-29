@@ -1,0 +1,28 @@
+@use 'variables' as v;
+
+@mixin mq($key) {
+  $size: map-get(v.$breakpoints, $key);
+  @media only screen and(min-width: $size) {
+    @content;
+  }
+}
+
+@mixin before($content: '', $pos: absolute) {
+  position: relative;
+
+  &::before {
+    content: $content;
+    position: $pos;
+    @content;
+  }
+}
+
+@mixin after($content: '', $pos: absolute) {
+  position: relative;
+
+  &::after {
+    content: $content;
+    position: $pos;
+    @content;
+  }
+}

@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as *;
+
+:root {
+  --clr-primary: #{$clr-electric-blue};
+  --clr-secondary: #{$clr-midnight};
+  --clr-accent: #{$clr-shamrock};
+  --clr-westar: #e0dfdb;
+
+  --font-size: #{$font-size};
+  --font-body: #{$font-body};
+  --font-header: #{$font-header};
+  --font-color: #{$clr-midnight};
+
+  --device-small: #{map-get($breakpoints, "small")};
+  --device-medium: #{map-get($breakpoints, "medium")};
+  --device-large: #{map-get($breakpoints, "large")};
+  --app-size: #{map-get($breakpoints, "large")};
+}

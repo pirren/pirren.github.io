@@ -1,0 +1,417 @@
+@use "../abstracts/mixins" as mx;
+@use "../abstracts//variables" as *;
+
+/*  Layout  */
+
+$cardborder: #dfdfdf;
+$navheight: 5.5rem;
+
+body {
+    padding-top: $navheight;
+}
+
+/* nav */
+nav {
+    height: $navheight;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 0.5rem 1.25rem rgba(black, 0.2);
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    transition: opacity 0.25s ease, height 0.25s ease;
+    
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    &.small {
+        height: #{$navheight / 1.5};
+
+        .left .logo {
+            width: 33.333px !important;
+            height: 31.666px !important;
+        }
+    }
+
+    @include mx.mq(large) {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        h4 {
+            text-transform: uppercase;
+            margin-bottom: 0;
+            display: none;
+
+            @include mx.mq(medium) {
+                display: inherit;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .else {
+            margin-right: 1rem;
+            transition: color 200ms ease-in-out;
+            color: #424a4b;
+
+            font-family: var(--font-header);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--clr-primary);
+            }
+        }
+    }
+
+    #scrollProgress {
+        position: absolute;
+        top: $navheight;
+        left: 0;
+        background: var(--clr-accent);
+        height: 6px;
+
+        transition: top 0.25s ease;
+
+        &.small {
+            top: #{$navheight / 1.5};
+        }
+    }
+}
+
+nav .left .logo {
+    width: 50px;
+    height: 47.5px;
+    background-image: url(../../gfx/pn_logo_dark.svg);
+    background-size: cover;
+    z-index: 2;
+    margin-right: 1rem;
+
+    transition: all 0.25s ease;
+}
+
+/* header */
+.header {
+    padding: 14rem 0;
+    background: url(../../gfx/hero/james-harrison-vpOeXr5wmR4-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+
+    @include mx.before {
+        width: 100%;
+        height: 100%;
+        background: #242424;
+        opacity: 0.35;
+
+        top: 0;
+        z-index: 1;
+    }
+
+    .container {
+        display: flex;
+        text-align: center;
+        color: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        @include mx.mq(large) {
+            text-align: left;
+            align-items: inherit;
+        }
+    }
+
+    &--content {
+        z-index: 3;
+
+        h1 {
+            margin-bottom: 1rem;
+        
+            @include mx.mq(large) {
+                font-size: 3rem;
+            }
+        }
+    
+        p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            font-family: var(--font-header);
+        }
+
+        a {
+            margin-top: 0.75rem;
+        }
+    }
+}
+
+
+/* Section: Latest projects */
+.latest-projects {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .headline h2 {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .headline p {
+        margin-bottom: 3rem;
+        font-size: 1.2rem;
+        max-width: unset;
+        font-family: var(--font-header);
+    }
+
+    .project-modules {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+
+        @include mx.mq(small) {
+            padding-left: 3.5rem;
+            padding-right: 3.5rem;
+        }
+
+        @include mx.mq(medium) {
+            padding-left: 0;
+            padding-right: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(256px, 1fr));
+        }
+    }
+}
+
+/* Section: Welcome */
+.welcome {
+    padding-top: 6rem;
+    padding-bottom: 13rem;
+
+    .content {
+        max-width: var(--device-large);
+        margin: 0 auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .content :is(h2,p) {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .content h2 {
+        margin-bottom: 2rem;
+        color: #f6f6f6;
+        font-size: 2.25rem;
+    }
+}
+
+/* Section: What i do */
+.blue-bg, .blue-bg--gradient {
+    color: var(--clr-westar);
+}
+
+.blue-bg {
+    background: var(--clr-primary);
+
+    &--gradient {
+        background: linear-gradient(180deg, darken($clr-electric-blue, 10%) 0%, $clr-electric-blue 100%);
+    }
+}
+
+.what-i-do {
+    padding-top: 5rem;
+    padding-bottom: 5rem; 
+    background: #fff;
+    border-bottom: 1px solid $cardborder;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: -13rem;
+
+        @include mx.mq(small) {
+            flex-direction: row;
+        }
+    }
+
+    .module {
+        background-color: #fff;
+        border-color: $cardborder;
+        border-style: solid;
+        border-width: 1px;
+        padding: 2rem;
+        flex: 1;
+
+        text-align: center;
+
+        h3 {
+            font-size: 1.55rem;
+            color: #010407;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            margin: 0 auto;
+            max-width: 40ch;
+            color: #424a4b;
+            line-height: 1.8;
+        }
+    }
+
+    .module:nth-of-type(1) {
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+
+        @include mx.mq(small) {
+            border-right: 0;
+            
+            border-bottom-left-radius: 0.5rem;
+            border-top-right-radius: 0;
+        }
+
+        .icon {
+            background-image: url(../../gfx/icons/icons8-prototype-100.png);
+        }
+    }
+
+    .module:nth-of-type(2) {
+        border-top: 0;
+        border-bottom: 0;
+        
+        @include mx.mq(small) {
+            border-top: 1px solid $cardborder;
+            border-bottom: 1px solid $cardborder;
+        }
+
+        .icon {
+            background-image: url(../../gfx/icons/icons8-source-code-100.png);
+        }
+    }
+
+    .module:nth-of-type(3) {
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+
+        @include mx.mq(small) {
+            border-left: 0;
+            
+            border-top-right-radius: 0.5rem;
+            border-bottom-left-radius: 0;
+        }
+
+        .icon {
+            background-image: url(../../gfx/icons/icons8-cv-100.png);
+        }
+    }
+}
+
+.what-i-do .module .icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 2rem auto;
+    
+    background-size: cover;
+}
+
+/* Section testimonials */
+.testimonials {
+    padding-top: 4rem;
+    padding-bottom: 11rem;
+    background: #fff;
+
+    .container {
+        
+    }
+}
+
+/* Section: Get in touch */
+.get-in-touch {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 3rem;
+        font-family: var(--font-header);
+        border-radius: 1rem;
+        margin-top: -11rem;
+        
+        box-shadow: 0 0.75rem 3rem rgba(black, 0.25);
+        background: linear-gradient(180deg, darken($clr-midnight, 5%) 0%, $clr-midnight 100%);
+
+        :first-child {
+            flex: 3;
+        }
+        :nth-child(2) {
+            flex: 2;
+            margin-top: 1.5rem;
+            max-width: 60ch;
+
+            @include mx.mq(large) {
+                text-align: center;
+                margin-top: 0;
+            }
+        }
+
+        @include mx.mq(small) {
+            padding: 4rem 5rem;
+        }
+
+        @include mx.mq(medium) {
+            padding: 4rem 7rem;
+        }
+
+        @include mx.mq(large) {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 4rem 7rem;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 2.25rem;
+            line-height: 0.9;
+        }
+
+        span {
+            font-weight: 300;
+            font-size: 1.75rem;
+            color: #d2d2d2;
+        }
+
+        .github {
+            color: var(--clr-accent);
+            text-decoration: underline;
+        }
+
+        .button {
+            font-weight: bold;
+        }
+    }
+}
+
+
+/* Section: Footer */
+footer {
+    margin-top: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}

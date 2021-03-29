@@ -1,0 +1,19 @@
+// BREAKPOINTS
+$breakpoints: (
+  small: 576px,
+  medium: 768px,
+  large: 992px
+);
+$app-size: map-get($breakpoints, "large");
+
+// FONTS
+$font-size: 1rem;
+$font-body: 'Source Serif Pro', serif;
+$font-header: 'Roboto', sans-serif; 
+
+// COLORS
+// $clr-darkelectric-blue: #144961;
+$clr-electric-blue: #0892d0;
+$clr-shamrock: #32d68c;
+$clr-midnight: #144961;
+

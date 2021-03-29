@@ -1,0 +1,63 @@
+@use "../abstracts/mixins" as mx;
+@use "../abstracts/variables" as *;
+
+/*  Button component  */
+
+.button {
+  transition: 0.15s ease;
+  padding: 0.25rem 1.5rem;
+  display: inline-block;
+  
+  background: transparent;
+  border-radius: 5rem;
+  border: 2px solid transparent;
+
+  text-decoration: none;
+  font-weight: 300;
+  font-family: var(--font-header);
+
+  i.fas, i.fa {
+    font-size: 0.8rem;
+    margin-left: 0.15rem;
+  }
+
+  &--white {
+    border-color: white;
+    color: white;
+
+    &:hover {
+      background: white;
+      color: var(--clr-secondary);
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+
+    background: #dedede !important;
+    color: $clr-midnight !important;
+    border: 0;
+  }
+
+  &--primary {
+    background: transparent;
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+
+    &:hover {
+      background: darken($clr-electric-blue, 5%);
+      color: white;
+    }
+  }
+
+  &--accent {
+    background: transparent;
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+
+    &:hover {
+      background: darken($clr-shamrock, 5%);
+      color: white;
+    }
+  }
+}
