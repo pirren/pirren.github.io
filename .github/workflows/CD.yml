@@ -17,11 +17,6 @@ jobs:
       - name: Use Node.js 2.1.5
         uses: actions/setup-node@v2.1.5
 
-      - name: Remove css stylesheet
-        uses: JesseTG/rm@v1.0.2
-        with:
-          path: wwwroot/css/style.css
-
       - name: Install dependencies
         run: npm install
         
@@ -29,6 +24,7 @@ jobs:
         run: npm run sass
 
       - name: Add and commit new css to master
+        continue-on-error: true
         run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
@@ -36,6 +32,7 @@ jobs:
           git commit -m 'Updates compiled CSS files'
 
       - name: Push changes
+        continue-on-error: true
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.PUBLISH_TOKEN }}
